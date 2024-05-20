@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginScreen from './screens/LoginScreen/loginscreen';
-import HomeScreen from './screens/HomeScreen/HomeScreen';
+import LoginScreen from './screens/LoginScreen/LoginScreen.js';
+import SplashScreen from './screens/SplashScreen/SplashScreen.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,14 +14,12 @@ follow template for New Screens created
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+      initialRouteName='Home'
+      >
         <Stack.Screen
           name="Home"
-          component={HomeScreen}
-        />
-        <Stack.Screen
-        name="Login"
-        component={LoginScreen}
+          component={SplashScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>  
