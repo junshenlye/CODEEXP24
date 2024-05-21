@@ -1,14 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Text, View, Button, Modal } from 'react-native';
 
 export default function LoginScreen({ navigation }) {
   const onPressHandler = () => {
     console.log('Button Pressed, Navigating to SplashScreen Page');
     navigation.navigate("SplashScreen");
   }
+  const [modalVisible, setModalVisible] = useState(true);
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Modal
+      animationType="slide"
+      transparent={true}
+      visible={modalVisible}
+      onRequestClose={() => {
+        Alert.alert('Modal has been closed.');
+      }}>
+        <Text>Open up App.js to start working on your app!</Text>
+        <Button title='Back' onPress={onPressHandler}/>
+      </Modal>
       <Button title='Back' onPress={onPressHandler}/>
     </View>
   );

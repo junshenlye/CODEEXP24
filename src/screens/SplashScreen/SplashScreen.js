@@ -9,18 +9,37 @@ export default function SplashScreen({ navigation }) {
   }
   return (
     <View style={globalStyles.container}>
-      <Text style={styles.localTextheader}>Hello World!</Text>
-      <TouchableOpacity style={styles.button} onPress={onPressHandler}>
-        <Text style={styles.buttonText}>Get Started</Text>
-      </TouchableOpacity>
+      <View style={styles.flexBoxContainer}>
+        <View style={styles.HeaderContainer}>
+          <Text style={styles.localTextheader}>Developed by Team Bravo</Text>
+        </View>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button} onPress={onPressHandler}>
+            <Text style={styles.buttonText}>Get Started</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 }
 //Add onto Local Stylesheet for convience
 const styles = StyleSheet.create({
+  flexBoxContainer:{
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  HeaderContainer:{
+    marginTop: 100,
+  },
+  buttonContainer:{
+    marginBottom: 187,
+  }, 
   localTextHeader:{
+    //settle fontFamily libs ltr
     fontSize: 16,
-    fontWeight: 'extraLight', 
+    fontWeight: 'light', 
   },
   button:{
     backgroundColor: '#000000',
