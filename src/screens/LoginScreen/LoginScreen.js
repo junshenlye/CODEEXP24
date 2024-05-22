@@ -7,6 +7,9 @@ export default function LoginScreen({ navigation }) {
     console.log('Button Pressed, Navigating to SplashScreen Page');
     navigation.navigate("SplashScreen");
   }
+  const handleDismiss = () => {
+    console.log('Login Button Pressed')
+  }
   const [modalVisible, setModalVisible] = useState(true);
   return (
     <View style={styles.container}>
@@ -14,9 +17,7 @@ export default function LoginScreen({ navigation }) {
       animationType="slide"
       transparent={true}
       visible={modalVisible}
-      onRequestClose={() => {
-        Alert.alert('Modal has been closed.');
-      }}>
+      onRequestClose={handleDismiss}>
         <Text>Open up App.js to start working on your app!</Text>
         <Button title='Back' onPress={onPressHandler}/>
       </Modal>

@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, Image} from 'react-native';
 import globalStyles from '../../styles/globalStyles';
+import logoImage from '../../../assets/Images/logoImage.png'
 
 export default function SplashScreen({ navigation }) {
   const onPressHandler = () => {
@@ -12,6 +13,9 @@ export default function SplashScreen({ navigation }) {
       <View style={styles.flexBoxContainer}>
         <View style={styles.HeaderContainer}>
           <Text style={styles.localTextheader}>Developed by Team Bravo</Text>
+        </View>
+        <View>
+          <Image style={styles.ImageContainer} source={logoImage}/>
         </View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button} onPress={onPressHandler}>
@@ -33,6 +37,10 @@ const styles = StyleSheet.create({
   HeaderContainer:{
     marginTop: 100,
   },
+  ImageContainer:{
+    height: 400,
+    width: 400,
+  }, 
   buttonContainer:{
     marginBottom: 187,
   }, 
