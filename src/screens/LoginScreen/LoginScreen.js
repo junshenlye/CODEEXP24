@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View, Button, Modal } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function LoginScreen({ navigation }) {
   const onPressHandler = () => {
@@ -13,14 +12,6 @@ export default function LoginScreen({ navigation }) {
   const [modalVisible, setModalVisible] = useState(true);
   return (
     <View style={styles.container}>
-      <Modal
-      animationType="slide"
-      transparent={true}
-      visible={modalVisible}
-      onRequestClose={handleDismiss}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Button title='Back' onPress={onPressHandler}/>
-      </Modal>
       <Button title='Back' onPress={onPressHandler}/>
     </View>
   );

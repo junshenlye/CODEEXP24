@@ -10,6 +10,37 @@ const Stack = createNativeStackNavigator();
 Root Navigation Stack for React Native Routing
 follow template for New Screens created
 */
+const slideUpTransition = {
+  gestureDirection: 'vertical',
+  transitionSpec: {
+    open: {
+      animation: 'timing',
+      config: {
+        duration: 300,
+      },
+    },
+    close: {
+      animation: 'timing',
+      config: {
+        duration: 300,
+      },
+    },
+  },
+  cardStyleInterpolator: ({ current, layouts }) => {
+    return {
+      cardStyle: {
+        transform: [
+          {
+            translateY: current.progress.interpolate({
+              inputRange: [0, 1],
+              outputRange: [layouts.screen.height, 0],
+            }),
+          },
+        ],
+      },
+    };
+  },
+}
 
 const App = () => {
   return (
@@ -25,6 +56,7 @@ const App = () => {
       <Stack.Screen
           name="Login"
           component={LoginScreen}
+          options={slideUpTransition}
         />        
       </Stack.Navigator>
     </NavigationContainer>  

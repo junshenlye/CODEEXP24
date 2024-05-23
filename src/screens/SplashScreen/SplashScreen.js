@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
     marginBottom: 187,
   }, 
   localTextHeader:{
-    //settle fontFamily libs ltr
     fontSize: 16,
     fontWeight: 'light', 
   },
