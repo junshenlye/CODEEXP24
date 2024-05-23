@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function LoginScreen({ navigation }) {
@@ -6,9 +6,12 @@ export default function LoginScreen({ navigation }) {
     console.log('Button Pressed, Navigating to SplashScreen Page');
     navigation.navigate("SplashScreen");
   }
+  const handleDismiss = () => {
+    console.log('Login Button Pressed')
+  }
+  const [modalVisible, setModalVisible] = useState(true);
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
       <Button title='Back' onPress={onPressHandler}/>
     </View>
   );
