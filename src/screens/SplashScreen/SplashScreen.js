@@ -35,18 +35,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   HeaderContainer:{
-    marginTop: 100,
+    marginTop: '20%',
   },
   ImageContainer:{
     height: 400,
     width: 400,
   }, 
   buttonContainer:{
-    marginBottom: 187,
+    marginBottom: '25%',
   }, 
   localTextHeader:{
     fontSize: 16,
-    fontWeight: 'light', 
+    fontWeight: '100', 
   },
   button:{
     backgroundColor: '#000000',

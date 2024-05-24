@@ -6,10 +6,6 @@ export default function LoginScreen({ navigation }) {
     console.log('Button Pressed, Navigating to SplashScreen Page');
     navigation.navigate("SplashScreen");
   }
-  const handleDismiss = () => {
-    console.log('Login Button Pressed')
-  }
-  const [modalVisible, setModalVisible] = useState(true);
   return (
     <View style={styles.container}>
       <Button title='Back' onPress={onPressHandler}/>
