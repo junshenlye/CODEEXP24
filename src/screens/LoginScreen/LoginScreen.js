@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import ToastMessage from '../../components/common/ToastMessage';
 
 export default function LoginScreen({ navigation }) {
   const onPressHandler = () => {
@@ -9,6 +10,10 @@ export default function LoginScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Button title='Back' onPress={onPressHandler}/>
+      <ToastMessage
+      title={"Success"}
+      message={"This is a Toast Messsage"}
+      />
     </View>
   );
 }
