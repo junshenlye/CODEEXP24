@@ -11,7 +11,7 @@ export default function LoginScreen({ navigation }) {
     <View style={styles.container}>
       <Button title='Back' onPress={onPressHandler}/>
       <ToastMessage
-      colorValue={1}
+      messageCode={1}
       title={"Success"}
       message={"This is a Toast Messsage"}
       />

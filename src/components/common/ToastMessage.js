@@ -2,11 +2,19 @@ import React from 'react';
 import { View, Text, StyleSheet} from 'react-native';
 import errorImage from '../../../assets/Svg/errorImage.svg'
 
-const ToastMessage = ({ colorValue, title, message }) => {
-
+const ToastMessage = ({ messageCode, title, message }) => {
+  let containerStyle;
+  let contentContainerStyle;
+  if (messageCode == 1){
+    containerStyle = styles.Errorcontainer
+    contentContainerStyle = styles.errorContentContainer
+  } else if (messageCode == 2) {
+    containerStyle = styles.SuccessContainer
+    contentContainerStyle = styles.SuccessContainer
+  }
   return (
-    <View style={styles.Errorcontainer}>
-        <View style={styles.contentContainer}>
+    <View style={containerStyle}>
+        <View style={contentContainerStyle}>
             <Text style={styles.font}>{title}</Text>
             <Text style={styles.message}>{message}</Text>
         </View>
@@ -15,7 +23,6 @@ const ToastMessage = ({ colorValue, title, message }) => {
 };
 
 //color is a conditional variable: Red/Green [Error/Success]
-
 const styles = StyleSheet.create({
   Errorcontainer: {
     borderWidth: 2,
@@ -28,7 +35,7 @@ const styles = StyleSheet.create({
   SuccessContainer: {
 
   }, 
-  contentContainer:{
+  errorContentContainer:{
     padding: 5,
   },
   font:{
@@ -40,5 +47,6 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
   },
 });
+
 
 export default ToastMessage;
